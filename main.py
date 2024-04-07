@@ -26,23 +26,23 @@ def start_timer() :
     global check
 
     reps +=1
-    work_sec= 0
-    short_break = 0
+    work_sec= WORK_MIN
+    short_break = SHORT_BREAK_MIN
     long_break = LONG_BREAK_MIN
 
     if reps % 8==0:
         # check += "✔️" if reps != 1 else ""
         label4.config(text=check)
-        count_down(10, long_break)
+        count_down(0, long_break)
         label2.config(text="Break", fg= GREEN)
 
     elif reps % 2 == 0:
-        count_down(10, short_break)
+        count_down(0, short_break)
         label2.config(text="Break", fg= PINK)
         # check += "✔️" if reps != 1 else ""
         # label4.config(text=check)
     else:
-        count_down(10, work_sec)
+        count_down(0, work_sec)
         label2.config(text="Work", fg= RED)
 
 
